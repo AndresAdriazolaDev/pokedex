@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/PokeList.css";
 import { PokemonCard } from "./PokemonCard";
 export function PokeList() {
   const [allPokemons, setAllPokemons] = useState([]);
@@ -37,8 +38,10 @@ export function PokeList() {
               type={pokemon.types[0].type.name}
               weight={pokemon.weight}
               height={pokemon.height}
-              stats={pokemon.stats.map((stat)=> stat.base_stat).slice(0,3)}
-              statsName={pokemon.stats.map((stat)=>stat.stat.name).slice(0,3)}
+              stats={pokemon.stats.map((stat) => stat.base_stat).slice(0, 3)}
+              statsName={pokemon.stats
+                .map((stat) => stat.stat.name)
+                .slice(0, 3)}
             />
           ))}
         </div>
